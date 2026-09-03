@@ -2,6 +2,8 @@
     <div class="col-md-6 offset-md-3">
         <app-std-four-io-form
         (emitnewobj)="getnewobj($event)"
+        [EditObj]="editobj"
+        (emitupdateobj)="getupdateobj($event)"
         ></app-std-four-io-form>
     </div>
 </div>
@@ -10,6 +12,8 @@
     <div class="col-md-12">
         <app-std-four-io-table
         [getstdinfo]="stdarr"
+        (emiteditobj)="geteditobj($event)"
+        (emitdeleteobj)="getdeleteobj($event)"
         ></app-std-four-io-table>
     </div>
 </div>

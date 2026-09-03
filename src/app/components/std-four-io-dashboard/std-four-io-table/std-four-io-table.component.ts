@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Istd } from 'src/app/model/std.interface';
 
 @Component({
@@ -8,7 +8,9 @@ import { Istd } from 'src/app/model/std.interface';
 })
 export class StdFourIoTableComponent implements OnInit {
 
+  @Output() emiteditobj = new EventEmitter<Istd>()
   @Input() getstdinfo !: Istd[]
+  @Output() emitdeleteobj = new EventEmitter<string>()
 
 
   constructor() { }
@@ -16,4 +18,12 @@ export class StdFourIoTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onedit(std:Istd){
+    this.emiteditobj.emit(std)
+  }
+
+
+  ondelete(stdid:string){
+    this.emitdeleteobj.emit(stdid)
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StdArr } from 'src/app/const/std';
 import { Istd } from 'src/app/model/std.interface';
+import { SnackbarService } from 'src/app/servises/snackbar.service';
 
 @Component({
   selector: 'app-std-four-io-dashboard',
@@ -11,8 +12,9 @@ export class StdFourIoDashboardComponent implements OnInit {
 
 
   stdarr : Istd[] = []
+  editobj !: Istd
 
-  constructor() { }
+  constructor(private _snackbar:SnackbarService) { }
 
   ngOnInit(): void {
     this.stdarr = StdArr
@@ -22,4 +24,18 @@ export class StdFourIoDashboardComponent implements OnInit {
     this.stdarr.unshift(std)
   }
 
+  geteditobj(std:Istd){
+    this.editobj = std
+  }
+
+  getupdateobj(std:Istd){
+    let getindex = this.stdarr.findIndex(i=>i.stdId === std.stdId)
+    this.stdarr[getindex] = std
+  }
+
+  getdeleteobj(stdid:string){
+    let getindex = this.stdarr.findIndex(i=>i.stdId === stdid)
+    this.stdarr.splice(getindex,1)
+    this._snackbar.onsnackbarshow('STD DELETED SUCCESSFULLY!!!')
+  }
 }
