@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <ul class="list-group">
+        <ul class="list-group" *ngIf="gettodoinfo.length>0;else notodo">
             <li 
             *ngFor="let todo of gettodoinfo"
             class="list-group-item d-flex justify-content-between">
@@ -19,3 +19,9 @@
         </ul>
     </div>
 </div>
+
+<ng-template #notodo>
+    <p class="alert alert-warning">
+        NO TODO FOUND CURRENTLY !!!
+    </p>
+</ng-template>
