@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Todo Info :-</strong>
+    </div>
+    <div class="card-body" *ngIf="gettodoinfo.length>0;else notodo">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of gettodoinfo">
+                <strong>{{todo.todoitem}}</strong>
+
+                <div>
+                    <button 
+                    (click)="onEdit(todo)"
+                    class="bg-primary mr-2"><mat-icon>edit</mat-icon></button>
+
+                    <button 
+                    (click)="ondelete(todo.todoid)"
+                    class="bg-danger"><mat-icon>delete</mat-icon></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #notodo>
+    <p class="alert alert-warning">
+        NO TODO FOUND CURRENTLY !!!
+    </p>
+</ng-template>

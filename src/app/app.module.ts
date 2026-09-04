@@ -18,6 +18,9 @@ import { StdFourIoFormComponent } from './components/std-four-io-dashboard/std-f
 import { StdFiveIoDashboardComponent } from './components/std-five-io-dashboard/std-five-io-dashboard.component';
 import { StdFiveIoFormComponent } from './components/std-five-io-dashboard/std-five-io-form/std-five-io-form.component';
 import { StdFiveIoTableComponent } from './components/std-five-io-dashboard/std-five-io-table/std-five-io-table.component';
+import { TodoFiveIoDashboardComponent } from './components/todo-five-io-dashboard/todo-five-io-dashboard.component';
+import { TodoFiveIoFormComponent } from './components/todo-five-io-dashboard/todo-five-io-form/todo-five-io-form.component';
+import { TodoFiveIoListComponent } from './components/todo-five-io-dashboard/todo-five-io-list/todo-five-io-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { StdFiveIoTableComponent } from './components/std-five-io-dashboard/std-
     StdFiveIoDashboardComponent,
     StdFiveIoFormComponent,
     StdFiveIoTableComponent,
+    TodoFiveIoDashboardComponent,
+    TodoFiveIoFormComponent,
+    TodoFiveIoListComponent,
   ],
   imports: [
     BrowserModule,
