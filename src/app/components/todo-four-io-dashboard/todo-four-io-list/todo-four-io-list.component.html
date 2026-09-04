@@ -1,1 +1,21 @@
-<p>todo-four-io-list works!</p>
+<div class="card">
+    <div class="card-body">
+        <ul class="list-group">
+            <li 
+            *ngFor="let todo of gettodoinfo"
+            class="list-group-item d-flex justify-content-between">
+                <strong>{{todo.todoitem}}</strong>
+
+                <div>
+                    <button 
+                    (click)="onedit(todo)"
+                    mat-flat-button color="primary" class="mr-2"><mat-icon>edit</mat-icon></button>
+
+                    <button 
+                    (click)="ondelete(todo.todoid)"
+                    mat-flat-button color="warn"><mat-icon>delete</mat-icon></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

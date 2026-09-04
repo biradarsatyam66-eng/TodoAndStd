@@ -22,7 +22,7 @@ export class StdFourIoFormComponent implements OnInit,OnChanges {
   constructor(private _snackbar:SnackbarService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-      if(changes['EditObj']['currentValue'] && this.stdform.invalid){
+      if(changes['EditObj']['currentValue']){
         this.inValid = false
         this.stdform.form.patchValue(changes['EditObj']['currentValue'])
         this.isinEditMode = true

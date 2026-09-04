@@ -1,1 +1,19 @@
-<p>todo-four-io-dashboard works!</p>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <app-todo-four-io-form
+        (emitnewobj)="getnewobj($event)"
+        [EditObj]="editonj"
+        (emitupdateonj)="getupdateobj($event)"
+        ></app-todo-four-io-form>
+    </div>
+</div>
+<hr class="bg-primary">
+<div class="row">
+    <div class="col-md-12">
+        <app-todo-four-io-list
+        [gettodoinfo]="todoarr"
+        (emiteditobj)="geteditobj($event)"
+        (emitdeleteobj)="getdeleteonj($event)"
+        ></app-todo-four-io-list>
+    </div>
+</div>

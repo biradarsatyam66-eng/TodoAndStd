@@ -1,1 +1,33 @@
-<p>todo-four-io-form works!</p>
+<div class="card">
+    <div class="card-header">
+        <h2 class="m-0">{{isineditmode?'UPDATE TODO':'ADD TODO'}}</h2>
+    </div>
+    <div class="card-body">
+        <form #todoform="ngForm" (ngSubmit)="onAddtodo()">
+            <div class="form-group">
+                <label for="todoitem">TODO ITEM:-</label>
+                <input 
+                required
+                ngModel
+                name="todoitem"
+                type="text" class="form-control">
+            </div>
+            <p 
+            *ngIf="isInvalid && todoform.invalid"
+            class="text-danger">
+                <strong>PLEASE ENTER VALID DETAIL !!!</strong>
+            </p>
+
+            <div>
+                <button 
+                *ngIf="!isineditmode"
+                mat-raised-button color="primary" type="submit" class="btn-block">ADD TODO</button>
+
+                <button 
+                *ngIf="isineditmode"
+                (click)="onupdate()"
+                mat-raised-button color="accent" class="btn-block">UPDATE TODO</button>
+            </div>
+        </form>
+    </div>
+</div>
