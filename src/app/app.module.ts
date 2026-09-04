@@ -15,6 +15,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatRippleModule } from '@angular/material/core';
 import { StdFourIoDashboardComponent } from './components/std-four-io-dashboard/std-four-io-dashboard.component';
 import { StdFourIoFormComponent } from './components/std-four-io-dashboard/std-four-io-form/std-four-io-form.component';
+import { StdFiveIoDashboardComponent } from './components/std-five-io-dashboard/std-five-io-dashboard.component';
+import { StdFiveIoFormComponent } from './components/std-five-io-dashboard/std-five-io-form/std-five-io-form.component';
+import { StdFiveIoTableComponent } from './components/std-five-io-dashboard/std-five-io-table/std-five-io-table.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { StdFourIoFormComponent } from './components/std-four-io-dashboard/std-f
     StdFourIoTableComponent,
     StdFourIoDashboardComponent,
     StdFourIoFormComponent,
+    StdFiveIoDashboardComponent,
+    StdFiveIoFormComponent,
+    StdFiveIoTableComponent,
   ],
   imports: [
     BrowserModule,

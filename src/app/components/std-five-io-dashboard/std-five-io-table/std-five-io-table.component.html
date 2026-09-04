@@ -1,10 +1,8 @@
 <div class="card">
-    <div class="card-header">
-        <strong>STD INFO :-</strong>
-    </div>
+
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped text-center">
+            <table class="table table-bordered table-striped table-dark text-center">
                 <thead>
                     <tr>
                         <th>SR.NO</th>
@@ -16,7 +14,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let std of getstdinfo,index as i">
+                    <tr *ngFor="let std of getstdinfo; let i = index">
                         <td>{{i+1}}</td>
                         <td>{{std.fname}} {{std.lname}}</td>
                         <td>{{std.email}}</td>
@@ -24,11 +22,11 @@
 
                         <td><button 
                             (click)="onedit(std)"
-                            mat-button color="primary"><mat-icon>edit</mat-icon></button></td>
+                            mat-icon-button color="accent"><mat-icon>edit</mat-icon></button></td>
 
                         <td><button 
                             (click)="ondelete(std.stdId)"
-                            mat-button color="warn"><mat-icon>delete</mat-icon></button></td>
+                            mat-icon-button color="warn"><mat-icon>delete</mat-icon></button></td>
                     </tr>
                 </tbody>
             </table>

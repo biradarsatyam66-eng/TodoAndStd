@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <app-std-five-io-form
+        (emitnewobj)="getnewobj($event)"
+        [EditObj]="editobj"
+        (emitupdateobj)="getupdateobj($event)"
+        ></app-std-five-io-form>
+    </div>
+</div>
+<hr class="bg-primary">
+<div class="row">
+    <div class="col-md-12">
+        <app-std-five-io-table
+        [getstdinfo]="stdarr"
+        (emiteditobj)="geteditobj($event)"
+        (emitDeleteobj)="getdeleteobj($event)"
+        ></app-std-five-io-table>
+    </div>
+</div>
