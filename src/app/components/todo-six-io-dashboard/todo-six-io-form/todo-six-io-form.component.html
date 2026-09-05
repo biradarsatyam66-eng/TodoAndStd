@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header d-flex align-items-center">
+        <span><mat-icon color="primary">keyboard_alt</mat-icon></span>
+        <h2 class="m-0 ml-2">{{isineditmode?'UPDATE TODO':'ADD TODO'}}</h2>
+    </div>
+    <div class="card-body">
+        <form #todoform="ngForm" (ngSubmit)="onAddtodo()">
+            <div class="form-group">
+                <label for="todoitem">TODO ITEM :-</label>
+                <input type="text" 
+                required
+                ngModel
+                name="todoitem" class="form-control">
+            </div>
+            <p
+            *ngIf="isinvalid && todoform.invalid"
+            ><strong class="text-danger">PLEASE ENTET VALID DETAILS!!!</strong></p>
+
+            <div>
+                <button 
+                *ngIf="!isineditmode"
+                mat-raised-button color="primary" class="btn-block">ADD TODO</button>
+
+                <button 
+                *ngIf="isineditmode"
+                (click)="onupdate()"
+                mat-raised-button color="accent" class="btn-block">UPDATE TODO</button>
+            </div>
+        </form>
+    </div>
+</div>

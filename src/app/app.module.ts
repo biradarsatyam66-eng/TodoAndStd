@@ -24,6 +24,9 @@ import { TodoFiveIoListComponent } from './components/todo-five-io-dashboard/tod
 import { StdSixIoDashboardComponent } from './components/std-six-io-dashboard/std-six-io-dashboard.component';
 import { StdSixIoFormComponent } from './components/std-six-io-dashboard/std-six-io-form/std-six-io-form.component';
 import { StdSixIoTableComponent } from './components/std-six-io-dashboard/std-six-io-table/std-six-io-table.component';
+import { TodoSixIoDashboardComponent } from './components/todo-six-io-dashboard/todo-six-io-dashboard.component';
+import { TodoSixIoFormComponent } from './components/todo-six-io-dashboard/todo-six-io-form/todo-six-io-form.component';
+import { TodoSixIoListComponent } from './components/todo-six-io-dashboard/todo-six-io-list/todo-six-io-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { StdSixIoTableComponent } from './components/std-six-io-dashboard/std-si
     StdSixIoDashboardComponent,
     StdSixIoFormComponent,
     StdSixIoTableComponent,
+    TodoSixIoDashboardComponent,
+    TodoSixIoFormComponent,
+    TodoSixIoListComponent,
   ],
   imports: [
     BrowserModule,

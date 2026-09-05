@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-6">
+        <app-todo-six-io-form
+        (emitnewobj)="getnewobj($event)"
+        [EditObj]="editobj"
+        (emitupdateobj)="getupdateobj($event)"
+        ></app-todo-six-io-form>
+    </div>
+
+    <div class="col-md-6">
+        <app-todo-six-io-list
+        [gettodoinfo]="todoarr"
+        (emiteditobj)="geteditobj($event)"
+        (emitdeleteobj)="getdeleteobj($event)"
+        ></app-todo-six-io-list>
+    </div>
+</div>
