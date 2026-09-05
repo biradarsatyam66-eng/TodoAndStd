@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h2 class="m-0 text-primary border-bottom border-danger">{{isinEditMode?'UPDATE STD':'ADD STD'}}</h2>
+    </div>
+    <div class="card-body">
+        <form #stdForm="ngForm" (ngSubmit)="onAddStd()">
+            <div class="form-group">
+                <label for="fname">FIRST NAME :-</label>
+                <input 
+                required
+                ngModel
+                name="fname"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">LAST NAME :-</label>
+                <input 
+                required
+                ngModel
+                name="lname"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL :-</label>
+                <input 
+                required
+                ngModel
+                name="email"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="contact">CONTACT :-</label>
+                <input 
+                required
+                ngModel
+                name="contact"
+                type="text" class="form-control">
+            </div>
+            <p *ngIf="isInvalid && stdForm.invalid">
+                <strong class="text-danger">PLEASE ENTER VAILD DETAILS!!!!</strong>
+            </p>
+
+            <div>
+                <button 
+                *ngIf="!isinEditMode"
+                mat-raised-button color="primary" class="btn-block">ADD STD</button>
+
+                <button 
+                *ngIf="isinEditMode"
+                (click)="onupdate()"
+                mat-raised-button color="accent" class="btn-block">UPDATE STD</button>
+            </div>
+        </form>
+    </div>
+</div>

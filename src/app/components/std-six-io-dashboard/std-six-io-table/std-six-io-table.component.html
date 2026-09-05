@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="text-primary">STD_INFO :-</strong>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered text-center" *ngIf="getstdinfo.length>0,else nostd">
+                <thead>
+                    <tr>
+                        <th>SR.NO</th>
+                        <th>FULL NAME</th>
+                        <th>CONTACT</th>
+                        <th>EMAIL</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of getstdinfo,let i = index">
+                        <td>{{i+1}}.</td>
+                        <td>{{std.fname}} {{std.lname}}</td>
+                        <td>{{std.contact}}</td>
+                        <td>{{std.email}}</td>
+
+                        <td><button><mat-icon 
+                            (click)="onedit(std)"
+                            color="primary">edit</mat-icon></button></td>
+
+                        <td><button><mat-icon 
+                            (click)="ondelete(std.stdId)"
+                            color="warn">delete</mat-icon></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<ng-template #nostd>
+    <p class="alert alert-warning">
+        NO STUDENT INFO FOUND CURRENTLY !!
+    </p>
+</ng-template>
